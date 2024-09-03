@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Crypto Links</title>
+    <title>My Crypto Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #000;
-            color: #00FF00;
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: #f6f8fa;
+            color: #333;
             margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,81 +20,129 @@
         }
 
         .container {
-            background-color: #111;
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
-            padding: 30px;
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 255, 0, 0.5);
-        }
-
-        h1 {
-            color: #00FF00;
-            font-size: 2em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #00FF00;
-            padding-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 15px 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #00FF00;
-            font-weight: 700;
-            font-size: 1.1em;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
             position: relative;
-            transition: color 0.3s;
         }
 
-        a::before {
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #0366d6;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #586069;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .link-item {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item:hover {
+            background-color: #e6e9ed;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #0366d6;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+
+        .link-item::before {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 3px;
-            bottom: -5px;
-            left: 0;
-            background-color: #00FF00;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: all 0.3s ease-in-out;
+            width: 50px;
+            height: 50px;
+            background: url('https://tap-coin.de/banners/assets/bitcoin.svg') no-repeat center center;
+            background-size: contain;
+            top: 10px;
+            right: 10px;
+            opacity: 0.1;
+            animation: moveCoin 5s infinite;
         }
 
-        a:hover::before {
-            visibility: visible;
-            transform: scaleX(1);
+        @keyframes moveCoin {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        a:hover {
-            color: #FFF;
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #586069;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>My Crypto Links</h1>
-        <ul>
-            <li><a href="https://tap-coin.de/refer/user/57291" target="_blank">Tap Coin</a></li>
-            <li><a href="https://paybits.xyz/?r=Nu6T6XNdHD" target="_blank">PayBits</a></li>
-            <li><a href="https://claimcoin.in" target="_blank">ClaimCoin</a></li>
-            <li><a href="https://firefaucet.win" target="_blank">Fire Faucet</a></li>
-            <li><a href="https://earn-pepe.com" target="_blank">Earn Pepe</a></li>
-            <li><a href="https://feyorra.top" target="_blank">Feyorra</a></li>
-        </ul>
+        <div class="header">
+            <h1>My Crypto Portfolio</h1>
+            <p>Explore and discover the best opportunities in cryptocurrency:</p>
+        </div>
+        <div class="links">
+            <div class="link-item">
+                <a href="https://tap-coin.de/refer/user/57291" target="_blank">Tap Coin</a>
+                <p>Earn crypto through various tasks and referrals.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://paybits.xyz/?r=Nu6T6XNdHD" target="_blank">PayBits</a>
+                <p>Get paid in cryptocurrency for completing tasks.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://claimcoin.in" target="_blank">ClaimCoin</a>
+                <p>Claim free crypto rewards with easy tasks.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://firefaucet.win" target="_blank">Fire Faucet</a>
+                <p>Participate in crypto faucets and earn rewards.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://earn-pepe.com" target="_blank">Earn Pepe</a>
+                <p>Earn and collect Pepe-themed crypto assets.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://feyorra.top" target="_blank">Feyorra</a>
+                <p>Explore various ways to earn crypto online.</p>
+            </div>
+        </div>
+        <footer>
+            &copy; 2024 My Crypto Portfolio. All rights reserved.
+        </footer>
     </div>
 </body>
 </html>
